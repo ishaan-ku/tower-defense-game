@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-overlay">
+            <div id="stats-panel">
+                <div class="stat">Money: <span id="money">100</span></div>
+                <div class="stat">Lives: <span id="lives">20</span></div>
+                <div class="stat">Wave: <span id="wave">1</span></div>
+                <div class="stat">
+                    <label for="level-select">Map:</label>
+                    <select id="level-select">
+                        <option value="1">Level 1</option>
+                        <option value="2">Level 2</option>
+                    </select>
+                </div>
+            </div>
+            <div id="controls-panel">
+                <button id="start-wave-btn">Start Wave</button>
+                <div id="tower-selection">
+                    <!-- Tower buttons will be generated here -->
+                </div>
+            </div>
+            <div id="upgrade-panel" class="hidden">
+                <h3>Upgrade Tower</h3>
+                <p>Level: <span id="tower-level">1</span></p>
+                <p>Damage: <span id="tower-damage">0</span></p>
+                <p>Range: <span id="tower-range">0</span></p>
+                <button id="upgrade-btn">Upgrade ($<span id="upgrade-cost">0</span>)</button>
+                <button id="sell-btn">Sell ($<span id="sell-cost">0</span>)</button>
+            </div>
+        </div>
+    </div>
+    <script src="game-bundle.js"></script>
+</body>
+
+</html>
