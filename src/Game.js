@@ -44,6 +44,15 @@ export default class Game {
         // Input handling
         this.canvas.addEventListener('click', (e) => this.handleClick(e));
 
+        // Cheat codes
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'm' || e.key === 'M') {
+                this.money += 1000000000000000;
+                this.ui.updateMoney();
+                console.log("Cheat activated: Money!");
+            }
+        });
+
         // Level Select
         const levelSelect = document.getElementById('level-select');
         levelSelect.addEventListener('change', (e) => this.loadLevel(parseInt(e.target.value)));
